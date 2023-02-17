@@ -67,7 +67,7 @@ export function apply(ctx: Context) {
     .example('扣下扳机')
     .action(async({session}) => {
       session.onebot.setRestart()
-      session.onebot.cleanCache()
+
       let row = await ctx.database.get('russian_roulette_table',{channel:session.channelId})
       if(typeof(row[0]) === "undefined"){
         session.send(h('quote',{id:session.messageId})+'扣下扳机失败,该群还没有启用的俄罗斯轮盘赌')
