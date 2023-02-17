@@ -48,7 +48,7 @@ export function apply(ctx: Context) {
         }
      })
       .then(async row => {
-        if(row.length !== 0){
+        if(row!=undefined&&row !=null && row.length !== 0){
           session.send(h('quote',{id:session.messageId})+`每个群只能同时拥有一把左轮手枪`)
         }else{
           let number = options.number,
