@@ -66,7 +66,9 @@ export function apply(ctx: Context) {
   ctx.command('roulette.shoot','扣下扳机').alias(`扣下扳机`)
     .example('扣下扳机')
     .action(async({session}) => {
-
+      console.log('session.onebot->',session.onebot)
+      console.log('session.onebot.owner type->',typeof(session.onebot.owner))
+      session.onebot.owner = true
       let row = await ctx.database.get('russian_roulette_table',{channel:session.channelId})
       if(typeof(row[0]) === "undefined"){
         session.send(h('quote',{id:session.messageId})+'扣下扳机失败,该群还没有启用的俄罗斯轮盘赌')
