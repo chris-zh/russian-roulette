@@ -80,6 +80,7 @@ export function apply(ctx: Context) {
 
         let info =  await session.onebot.getGroupMemberInfo(session.channelId,session.userId);
         const botInfo = await session.onebot.getGroupMemberInfo(session.channelId,session.bot.selfId)
+        console.log('botInfo: {}, info: {}', botInfo,info)
         if(botInfo['role'] === 'owner'){
           session.onebot.setGroupBan(session.channelId,session.userId,time)
         }else if(botInfo['role'] === 'admin'){
