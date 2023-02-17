@@ -84,7 +84,8 @@ export function apply(ctx: Context) {
         if(botInfo['role'] === 'owner'){
           session.onebot.setGroupBan(session.channelId,session.userId,time)
         }else if(botInfo['role'] === 'admin'){
-          (info['role'] == 'member') ? session.onebot.setGroupBan(session.channelId,session.userId,time):session.send('权限不足禁言失败')
+          // (info['role'] == 'member') ? session.onebot.setGroupBan(session.channelId,session.userId,time):session.send('权限不足禁言失败')
+          session.onebot.setGroupBan(session.channelId,session.userId,time)
         }else{
           session.send('权限不足禁言失败')
         }
