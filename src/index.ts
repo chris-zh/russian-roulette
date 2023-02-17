@@ -66,7 +66,6 @@ export function apply(ctx: Context) {
   ctx.command('roulette.shoot','扣下扳机').alias(`扣下扳机`)
     .example('扣下扳机')
     .action(async({session}) => {
-      session.onebot.setRestart()
 
       let row = await ctx.database.get('russian_roulette_table',{channel:session.channelId})
       if(typeof(row[0]) === "undefined"){
