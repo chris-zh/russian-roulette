@@ -92,8 +92,8 @@ export function apply(ctx: Context) {
         ctx.database.remove('russian_roulette_table',{channel:session.channelId});
 
       }else if(clip.length === 0){
-        session.send('你这家伙运气真不错，居然是把空枪，但是你这么好运我太不爽了，还是请你死一死')
         session.onebot.setGroupBan(session.channelId,session.userId,time)
+        session.send('你这家伙运气真不错，居然是把空枪，但是你这么好运我太不爽了，还是请你死一死')
         ctx.database.remove('russian_roulette_table',{channel:session.channelId});
       }else{
         clip = clip.slice(1,clip.length)
